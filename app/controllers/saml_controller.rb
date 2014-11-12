@@ -25,9 +25,9 @@ class SamlController < ApplicationController
   def saml_settings
     settings = OneLogin::RubySaml::Settings.new
 
-    settings.assertion_consumer_service_url = "http://localhost:4000/saml/consume" # SP side
+    settings.assertion_consumer_service_url = "http://localhost:3000/saml/consume" # SP side
     settings.issuer                         = request.host
-    settings.idp_sso_target_url             = "http://localhost:3000/saml/auth" # IdP side
+    settings.idp_sso_target_url             = "http://localhost:4000/saml/auth" # IdP side
     settings.idp_cert_fingerprint           = "9E:65:2E:03:06:8D:80:F2:86:C7:6C:77:A1:D9:14:97:0A:4D:F4:4D"
     settings.name_identifier_format         = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
 
